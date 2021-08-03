@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: postgres-12-3-alpine
+      POSTGRES_PASSWORD: $postgres_password
     spec:
       containers:
       - name: postgres-12-3-alpine
