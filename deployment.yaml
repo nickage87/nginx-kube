@@ -11,10 +11,12 @@ spec:
     metadata:
       labels:
         app: postgres-12-3-alpine
-      POSTGRES_PASSWORD: $postgres_password
     spec:
       containers:
       - name: postgres-12-3-alpine
         image: postgres:12.3-alpine
         ports:
         - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: $postgres_password
