@@ -17,6 +17,7 @@ spec:
         image: postgres:12.3-alpine
         ports:
         - containerPort: 5432
+          hostPort: 5433
         env:
         - name: POSTGRES_PASSWORD
           value: $postgres_password
