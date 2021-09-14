@@ -4,6 +4,7 @@ metadata:
   name: postgres-12-3-alpine
   labels:
     run: postgres-12-3-alpine
+  namespace: stage
 spec:
   ports:
   - port: 5433
