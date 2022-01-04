@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-12-3-alpine
+  namespace: prod
+spec:
+  selector:
+    matchLabels:
+      app: postgres-12-3-alpine
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: postgres-12-3-alpine
+    spec:
+      containers:
+      - name: postgres-12-3-alpine
+        image: postgres:12.3-alpine
+        ports:
+        - containerPort: 5432
+          hostPort: 5433
+        env:
+        - name: POSTGRES_PASSWORD
+          value: $postgres_password
