@@ -20,5 +20,7 @@ spec:
         - containerPort: 5432
           hostPort: 5433
         env:
+        - name: POSTGRES_USER
+          value: $postgres_user
         - name: POSTGRES_PASSWORD
           value: $postgres_password
